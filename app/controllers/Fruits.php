@@ -2,7 +2,12 @@
 class Fruits extends Controller {
     public function index()
     {
-        $this->apples();
+        $this->fruitModel = $this->model('Fruit');
+        
+        $this->view('fruits', [
+            'title' => 'Fruits page',
+            'fruits' => $this->fruitModel->getFruits()
+        ]);
     }
 
     public function apples()
