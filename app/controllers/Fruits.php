@@ -1,5 +1,5 @@
 <?php
-class Fruit extends Controller {
+class Fruits extends Controller {
     public function index()
     {
         $this->apples();
