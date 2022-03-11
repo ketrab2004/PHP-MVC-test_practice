@@ -1,4 +1,4 @@
-USE `mvc_framework`;
+USE `mvcframework`;
 
 DROP TABLE `fruit`;
 
@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS `fruit`(
 INSERT INTO `fruit`
     (`name`, `color`, `price`)
 VALUES
-    ('appel', 'groen', .75),
-    ('sinaasappel', 'oranje', .65),
-    ('citroen', 'geel', 1),
-    ('tomaat', 'rood', .5),
-    ('aardappel', 'bruin/beige', .25);
+    ('Appel', 'groen', .75),
+    ('Sinaasappel', 'oranje', .65),
+    ('Citroen', 'geel', 1),
+    ('Tomaat', 'rood', .5),
+    ('Aardappel', 'bruin/beige', .25);

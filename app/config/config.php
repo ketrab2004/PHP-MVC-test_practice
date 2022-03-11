@@ -9,7 +9,7 @@ define('DB_NAME', 'mvc_framework'); //Add your DB Name
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URLROOT (Dynamic links)
-define('URLROOT', 'http://localhost/MVCFramework/');
+define('URLROOT', 'https://mvc-workbench.org/');
 
 //Sitename
 define('SITENAME', 'MVC Framework');
