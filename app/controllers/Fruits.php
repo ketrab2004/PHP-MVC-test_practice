@@ -4,9 +4,23 @@ class Fruits extends Controller {
     {
         $this->fruitModel = $this->model('Fruit');
         
+        $rows = "";
+        foreach ($this->fruitModel->getFruits() as $fruit):
+            $fruit = (object)$fruit; // to object because ['this'] sucks
+    
+            $rows .= "
+            <tr>
+                <th>{$fruit->id}</th>
+                <td>{$fruit->name}</td>
+                <td>{$fruit->color}</td>
+                <td>€{$fruit->price}</td>
+            </tr>
+            ";
+        endforeach;
+
         $this->view('fruits', [
             'title' => 'Fruits page',
-            'fruits' => $this->fruitModel->getFruits()
+            'fruit Rows' => $rows
         ]);
     }
 
