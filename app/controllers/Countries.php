@@ -11,7 +11,7 @@ class Countries extends Controller {
 
             $data[$i]->population = number_format($data[$i]->population, 0, ',', '.'); // format 1000 to 1.000
         }
-        
+
         $this->view('countries/index', [
             'title' => 'Home page',
             'countries' => $data
