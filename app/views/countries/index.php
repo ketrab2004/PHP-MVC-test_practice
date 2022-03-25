@@ -8,6 +8,8 @@
             <th>Hoofdstad</th>
             <th>Continent</th>
             <th>Aantal inwoners</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +22,12 @@
                 <td>{$country->capitalCity}</td>
                 <td>{$country->continent}</td>
                 <td>{$country->population}</td>
+                <td><a href='./countries/edit?id={$country->id}'>
+                    Edit
+                </a></td>
+                <td><a href='./countries/delete?id={$country->id}'>
+                    Delete
+                </a></td>
             </tr>
             ";
         }
