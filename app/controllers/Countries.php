@@ -64,4 +64,31 @@ class Countries extends Controller
 
         header('Location: ../countries');
     }
+
+    public function scan()
+    {
+        $this->view('countries/scan');
+    }
+
+    public function scanInfo()
+    {
+        $name = $_POST["countryCode"];
+
+        if (!isset($name)) {
+            header('Location: ./scan');
+        }
+
+        try {
+            $data = $this->countryModel->getCountryByName($name);
+        } catch (Exception $e) {
+            $data = [];
+        }
+
+        $data["name"] = $_POST["countryCode"];
+
+        $this->view('countries/scanInfo', [
+            "info" => $data,
+            "data_found" => count($data) > 1
+        ]);
+    }
 }
