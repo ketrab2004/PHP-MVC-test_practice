@@ -89,7 +89,8 @@ class DatabaseController extends DatabaseModel
      */
     public function fetch(): array
     {
-        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $this->stmt->fetch(PDO::FETCH_ASSOC);
+        return !$result ? throw new Exception("No result found") : $result;
     }
 
 
