@@ -5,3 +5,14 @@
     <input type="text" name="countryCode" autofocus />
 
 </form>
+
+<script>
+    const input = document.querySelector("input[type=text]");
+
+    function focus() {
+        input.focus();
+        window.requestAnimationFrame(focus);
+    }
+
+    window.requestAnimationFrame(focus);
+</script>
