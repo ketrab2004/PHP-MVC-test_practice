@@ -49,6 +49,15 @@ class Country {
         return $this->db->execute()->fetch();
     }
 
+    public function getCountryByName(string $name)
+    {
+        $this->db->query("SELECT * FROM `countries` WHERE `name` = :name");
+
+        $this->db->bind(":name", $name);
+
+        return $this->db->execute()->fetch();
+    }
+
     public function deleteCountry(int $id)
     {
         $this->db->query("DELETE FROM `countries` WHERE `id` = :id");
